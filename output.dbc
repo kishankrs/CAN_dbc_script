@@ -1,0 +1,160 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: BMS VCU EVCC
+
+
+BO_ 257 Battery_Info_1: 8 BMS
+ SG_ Max_Cell_Voltage : 48|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+ SG_ Min_Cell_Voltage : 32|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+ SG_ Battery_Current  : 16|16@1+ (1,0) [0.0|255.35] "A"  VCU
+ SG_ Battery_Voltage  : 0|16@1+ (1,0) [0.0|70.535] "V"  VCU
+
+BO_ 258 Battery_Info_2: 8 BMS
+ SG_ Init_Capacity  : 32|16@1+ (1,0) [0.0|655.35] "kWh"  VCU
+ SG_ Charge_Discharge_Cycle : 16|16@1+ (1,0) [0.0|65535.0] ""  VCU
+ SG_ SOH : 8|8@1+ (1,0) [0.0|255.0] "%"  VCU
+ SG_ SOC  : 0|8@1+ (1,0) [0.0|255.0] "%"  VCU
+
+BO_ 259 Battery_Parameter: 8 BMS
+ SG_ Allowed_Peak_Current_Discharge  : 48|16@1+ (1,0) [0.0|105.35] "A"  VCU
+ SG_ Allowed_Peak_Current_Charge : 32|16@1+ (1,0) [0.0|405.35] "A"  VCU
+ SG_ Allowed_Batt_Max_Voltage  : 16|16@1+ (1,0) [0.0|65535.0] "V"  VCU
+ SG_ Allowed_Batt_Min_Voltage  : 0|16@1+ (1,0) [0.0|65535.0] "V"  VCU
+
+BO_ 260 Cell_Vol_Info_1: 8 BMS
+ SG_ Cell_4_Voltage  : 48|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+ SG_ Cell_3_Voltage  : 32|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+ SG_ Cell_2_Voltage  : 16|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+ SG_ Cell_1_Voltage  : 0|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+
+BO_ 261 Cell_Vol_Info_2: 8 BMS
+ SG_ Cell_8_Voltage  : 48|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+ SG_ Cell_7_Voltage  : 32|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+ SG_ Cell_6_Voltage  : 16|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+ SG_ Cell_5_Voltage  : 0|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+
+BO_ 262 Cell_Vol_Info_3: 8 BMS
+ SG_ Cell_12_Voltage  : 48|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+ SG_ Cell_11_Voltage  : 32|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+ SG_ Cell_10_Voltage  : 16|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+ SG_ Cell_9_Voltage  : 0|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+
+BO_ 263 Cell_Vol_Info_4: 8 BMS
+ SG_ Cell_16_Voltage  : 48|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+ SG_ Cell_15_Voltage  : 32|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+ SG_ Cell_14_Voltage  : 16|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+ SG_ Cell_13_Voltage  : 0|16@1+ (1,0) [0.0|6.5535] "V"  VCU
+
+BO_ 264 Cell_Bal_Info: 8 BMS
+ SG_ Cell_16_Balacing : 30|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_15_Balacing : 28|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_14_Balacing : 26|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_13_Balacing : 24|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_12_Balacing : 22|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_11_Balacing : 20|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_10_Balacing : 18|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_9_Balacing : 16|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_8_Balacing : 14|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_7_Balacing : 12|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_6_Balacing : 10|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_5_Balacing : 8|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_4_Balacing : 6|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_3_Balacing : 4|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_2_Balacing : 2|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ Cell_1_Balacing : 0|2@1+ (1,0) [0.0|3.0] ""  VCU
+
+BO_ 265 Cell_BMS_Temp: 8 BMS
+ SG_ Temp_Cell_Max : 48|8@1+ (1,0) [0.0|215.0] "C"  VCU
+ SG_ Temp_Cell_Min : 40|8@1+ (1,0) [0.0|215.0] "C"  VCU
+ SG_ BMS_Temp : 32|8@1+ (1,0) [0.0|215.0] "C"  VCU
+ SG_ Temp_Sen_4 : 24|8@1+ (1,0) [0.0|215.0] "C"  VCU
+ SG_ Temp_Sen_3 : 16|8@1+ (1,0) [0.0|215.0] "C"  VCU
+ SG_ Temp_Sen_2 : 8|8@1+ (1,0) [0.0|215.0] "C"  VCU
+ SG_ Temp_Sen_1 : 0|8@1+ (1,0) [0.0|215.0] "C"  VCU
+
+BO_ 513 BMS_State : 8 BMS
+ SG_ Contactor_Open_Close_State  : 8|4@1+ (1,0) [0.0|15.0] ""  VCU
+ SG_ BMS_Operation_State : 4|4@1+ (1,0) [0.0|15.0] ""  VCU
+ SG_ Batt_Pack_Oper_State : 2|2@1+ (1,0) [0.0|3.0] ""  VCU
+ SG_ BMS_Ignition_Status : 0|2@1+ (1,0) [0.0|3.0] ""  VCU
+
+BO_ 514 VCU_CHARGER : 8 VCU
+ SG_ HV_Contactor_Status : 38|1@1+ (1,0) [1.0|1.0] ""  EVCC
+ SG_ CAN_ENABLE : 37|1@1+ (1,0) [1.0|1.0] ""  EVCC
+ SG_ EMERGENCY_SHUTDOWN : 36|1@1+ (1,0) [0.0|1.0] ""  EVCC
+ SG_ CHARGE_MODE_REQUEST : 34|2@1+ (1,0) [0.0|3.0] ""  EVCC
+ SG_ CHARGE_ENABLE : 32|2@1+ (1,0) [0.0|3.0] ""  EVCC
+ SG_ Max_Charging_Voltage_Limit : 16|16@1+ (1,0) [0.0|655.35] "V"  EVCC
+ SG_ Max_Charging_Current_Limit : 0|16@1+ (1,0) [0.0|32767.5] "A"  EVCC
+
+BO_ 768 CHARGER_VCU: 8 EVCC
+ SG_ Charger_voltage_feedback_dummy : 10|16@1+ (1,0) [0.0|70.535] ""  BMS
+ SG_ Charger_current_feedback_dummy : 2|8@1+ (1,0) [0.0|100.0] ""  BMS
+ SG_ Charger_motor_feedback_dummy : 0|2@1+ (1,0) [0.0|3.0] ""  BMS
+
+
+
+
+CM_ BO_ 257 "Transmitters: BMS";
+CM_ BO_ 258 "Transmitters: BMS";
+CM_ BO_ 259 "Transmitters: BMS";
+CM_ BO_ 260 "Transmitters: BMS";
+CM_ BO_ 261 "Transmitters: BMS";
+CM_ BO_ 262 "Transmitters: BMS";
+CM_ BO_ 263 "Transmitters: BMS";
+CM_ BO_ 264 "Transmitters: BMS";
+CM_ BO_ 265 "Transmitters: BMS";
+CM_ BO_ 513 "Transmitters: BMS";
+CM_ BO_ 514 "Transmitters: VCU";
+CM_ BO_ 768 "Transmitters: EVCC";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_ "GenMsgCycleTime" BO_ 257 100;
+BA_ "GenMsgCycleTime" BO_ 258 10;
+BA_ "GenMsgCycleTime" BO_ 259 100;
+BA_ "GenMsgCycleTime" BO_ 260 100;
+BA_ "GenMsgCycleTime" BO_ 261 100;
+BA_ "GenMsgCycleTime" BO_ 262 100;
+BA_ "GenMsgCycleTime" BO_ 263 100;
+BA_ "GenMsgCycleTime" BO_ 264 100;
+BA_ "GenMsgCycleTime" BO_ 265 100;
+BA_ "GenMsgCycleTime" BO_ 513 100;
+BA_ "GenMsgCycleTime" BO_ 514 100;
+BA_ "GenMsgCycleTime" BO_ 768 100;
+
+
+
+
