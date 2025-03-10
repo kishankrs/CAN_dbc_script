@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: BMS VCU EVCC
+BU_: EVCC VCU BMS
 
 
 BO_ 257 Battery_Info_1: 8 BMS
