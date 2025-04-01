@@ -1,66 +1,107 @@
-Message ID,Message,Signal,Startbit,Length [Bit],Initial Value,Factor,Offset,Minimum,Maximum,Value type,Byte order,Node,Receiver,Cycle Time,Message Send Type,Unit,Direction,enum
-0x101,Battery_Info_1,Battery_Voltage ,0,16,0,0.001,5,0,70.535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x101,Battery_Info_1,Battery_Current ,16,16,0,0.01,-400,0,255.35,Unsigned,Intel,BMS,VCU,100,Cyclic,A,Tx,
-0x101,Battery_Info_1,Min_Cell_Voltage,32,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x101,Battery_Info_1,Max_Cell_Voltage,48,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x102,Battery_Info_2,SOC ,0,8,0,1,0,0,255,Unsigned,Intel,BMS,VCU,10,Cyclic,%,Tx,
-0x102,Battery_Info_2,SOH,8,8,0,1,0,0,255,Unsigned,Intel,BMS,VCU,10,Cyclic,%,Tx,
-0x102,Battery_Info_2,Charge_Discharge_Cycle,16,16,0,1,0,0,65535,Unsigned,Intel,BMS,VCU,10,Cyclic,,Tx,
-0x102,Battery_Info_2,Init_Capacity ,32,16,0,0.01,0,0,655.35,Unsigned,Intel,BMS,VCU,10,Cyclic,kWh,Tx,
-0x103,Battery_Parameter,Allowed_Batt_Min_Voltage ,0,16,0,1,0,0,65535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x103,Battery_Parameter,Allowed_Batt_Max_Voltage ,16,16,0,1,0,0,65535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x103,Battery_Parameter,Allowed_Peak_Current_Charge,32,16,0,0.01,-250,0,405.35,Unsigned,Intel,BMS,VCU,100,Cyclic,A,Tx,
-0x103,Battery_Parameter,Allowed_Peak_Current_Discharge ,48,16,0,0.01,-550,0,105.35,Unsigned,Intel,BMS,VCU,100,Cyclic,A,Tx,
-0x104,Cell_Vol_Info_1,Cell_1_Voltage ,0,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x104,Cell_Vol_Info_1,Cell_2_Voltage ,16,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x104,Cell_Vol_Info_1,Cell_3_Voltage ,32,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x104,Cell_Vol_Info_1,Cell_4_Voltage ,48,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x105,Cell_Vol_Info_2,Cell_5_Voltage ,0,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x105,Cell_Vol_Info_2,Cell_6_Voltage ,16,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x105,Cell_Vol_Info_2,Cell_7_Voltage ,32,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x105,Cell_Vol_Info_2,Cell_8_Voltage ,48,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x106,Cell_Vol_Info_3,Cell_9_Voltage ,0,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x106,Cell_Vol_Info_3,Cell_10_Voltage ,16,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x106,Cell_Vol_Info_3,Cell_11_Voltage ,32,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x106,Cell_Vol_Info_3,Cell_12_Voltage ,48,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x107,Cell_Vol_Info_4,Cell_13_Voltage ,0,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x107,Cell_Vol_Info_4,Cell_14_Voltage ,16,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x107,Cell_Vol_Info_4,Cell_15_Voltage ,32,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x107,Cell_Vol_Info_4,Cell_16_Voltage ,48,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,
-0x108,Cell_Bal_Info,Cell_1_Balacing,0,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_2_Balacing,2,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_3_Balacing,4,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_4_Balacing,6,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_5_Balacing,8,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_6_Balacing,10,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_7_Balacing,12,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_8_Balacing,14,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_9_Balacing,16,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_10_Balacing,18,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_11_Balacing,20,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_12_Balacing,22,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_13_Balacing,24,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_14_Balacing,26,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_15_Balacing,28,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x108,Cell_Bal_Info,Cell_16_Balacing,30,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x109,Cell_BMS_Temp,Temp_Sen_1,0,8,0,1,-40,0,215,Unsigned,Intel,BMS,VCU,100,Cyclic,C,Tx,
-0x109,Cell_BMS_Temp,Temp_Sen_2,8,8,0,1,-40,0,215,Unsigned,Intel,BMS,VCU,100,Cyclic,C,Tx,
-0x109,Cell_BMS_Temp,Temp_Sen_3,16,8,0,1,-40,0,215,Unsigned,Intel,BMS,VCU,100,Cyclic,C,Tx,
-0x109,Cell_BMS_Temp,Temp_Sen_4,24,8,0,1,-40,0,215,Unsigned,Intel,BMS,VCU,100,Cyclic,C,Tx,
-0x109,Cell_BMS_Temp,BMS_Temp,32,8,0,1,-40,0,215,Unsigned,Intel,BMS,VCU,100,Cyclic,C,Tx,
-0x109,Cell_BMS_Temp,Temp_Cell_Min,40,8,0,1,-40,0,215,Unsigned,Intel,BMS,VCU,100,Cyclic,C,Tx,
-0x109,Cell_BMS_Temp,Temp_Cell_Max,48,8,0,1,-40,0,215,Unsigned,Intel,BMS,VCU,100,Cyclic,C,Tx,
-0x201,BMS_State ,BMS_Ignition_Status,0,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x201,BMS_State ,Batt_Pack_Oper_State,2,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x201,BMS_State ,BMS_Operation_State,4,4,0,1,0,0,15,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x201,BMS_State ,Contactor_Open_Close_State ,8,4,0,1,0,0,15,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,
-0x202,VCU_CHARGER ,Max_Charging_Current_Limit,0,16,0,0.5,0,0,32767.5,Unsigned,Intel,VCU,EVCC,100,Cyclic,A,Tx,
-0x202,VCU_CHARGER ,Max_Charging_Voltage_Limit,16,16,0,0.01,0,0,655.35,Unsigned,Intel,VCU,EVCC,100,Cyclic,V,Tx,
-0x202,VCU_CHARGER ,CHARGE_ENABLE,32,2,0,1,0,0,3,Unsigned,Intel,VCU,EVCC,100,Cyclic,,Tx,
-0x202,VCU_CHARGER ,CHARGE_MODE_REQUEST,34,2,0,1,0,0,3,Unsigned,Intel,VCU,EVCC,100,Cyclic,,Tx,
-0x202,VCU_CHARGER ,EMERGENCY_SHUTDOWN,36,1,0,1,0,0,1,Unsigned,Intel,VCU,EVCC,100,Cyclic,,Tx,
-0x202,VCU_CHARGER ,CAN_ENABLE,37,1,0,1,0,1,1,Unsigned,Intel,VCU,EVCC,100,Cyclic,,Tx,
-0x202,VCU_CHARGER ,HV_Contactor_Status,38,1,0,1,0,1,1,Unsigned,Intel,VCU,EVCC,100,Cyclic,,Tx,
-0x300,CHARGER_VCU,Charger_motor_feedback_dummy,0,2,0,1,0,0,3,Unsigned,Intel,EVCC,BMS,100,Cyclic,,Rx,
-0x300,CHARGER_VCU,Charger_current_feedback_dummy,2,8,0,0.01,0,0,100,Unsigned,Intel,EVCC,BMS,100,Cyclic,,Rx,
-0x300,CHARGER_VCU,Charger_voltage_feedback_dummy,10,16,0,0.001,5,0,70.535,Unsigned,Intel,EVCC,BMS,100,Cyclic,,Rx,
+Message ID,Message,Signal,Startbit,Length [Bit],Initial Value,Factor,Offset,Minimum,Maximum,Value type,Byte order,Node,Receiver,Cycle Time,Message Send Type,Unit,Direction,Value Table,Comment
+0x101,Battery_Info_1,Battery_Voltage ,0,16,0,0.001,5,0,70.535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,Battery voltage
+0x101,Battery_Info_1,Battery_Current ,16,16,0,0.01,-400,0,255.35,Unsigned,Intel,BMS,VCU,100,Cyclic,A,Tx,,NA
+0x101,Battery_Info_1,Min_Cell_Voltage,32,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x101,Battery_Info_1,Max_Cell_Voltage,48,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x102,Battery_Info_2,SOC ,0,8,0,1,0,0,255,Unsigned,Intel,BMS,VCU,10,Cyclic,%,Tx,,NA
+0x102,Battery_Info_2,SOH,8,8,0,1,0,0,255,Unsigned,Intel,BMS,VCU,10,Cyclic,%,Tx,,NA
+0x102,Battery_Info_2,Charge_Discharge_Cycle,16,16,0,1,0,0,65535,Unsigned,Intel,BMS,VCU,10,Cyclic,,Tx,,NA
+0x102,Battery_Info_2,Init_Capacity ,32,16,0,0.01,0,0,655.35,Unsigned,Intel,BMS,VCU,10,Cyclic,kWh,Tx,,NA
+0x103,Battery_Parameter,Allowed_Batt_Min_Voltage ,0,16,0,1,0,0,65535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x103,Battery_Parameter,Allowed_Batt_Max_Voltage ,16,16,0,1,0,0,65535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x103,Battery_Parameter,Allowed_Peak_Current_Charge,32,16,0,0.01,-250,0,405.35,Unsigned,Intel,BMS,VCU,100,Cyclic,A,Tx,,NA
+0x103,Battery_Parameter,Allowed_Peak_Current_Discharge ,48,16,0,0.01,-550,0,105.35,Unsigned,Intel,BMS,VCU,100,Cyclic,A,Tx,,NA
+0x104,Cell_Vol_Info_1,Cell_1_Voltage ,0,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,Cell voltage 1
+0x104,Cell_Vol_Info_1,Cell_2_Voltage ,16,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x104,Cell_Vol_Info_1,Cell_3_Voltage ,32,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x104,Cell_Vol_Info_1,Cell_4_Voltage ,48,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x105,Cell_Vol_Info_2,Cell_5_Voltage ,0,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x105,Cell_Vol_Info_2,Cell_6_Voltage ,16,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x105,Cell_Vol_Info_2,Cell_7_Voltage ,32,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x105,Cell_Vol_Info_2,Cell_8_Voltage ,48,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x106,Cell_Vol_Info_3,Cell_9_Voltage ,0,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x106,Cell_Vol_Info_3,Cell_10_Voltage ,16,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x106,Cell_Vol_Info_3,Cell_11_Voltage ,32,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x106,Cell_Vol_Info_3,Cell_12_Voltage ,48,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x107,Cell_Vol_Info_4,Cell_13_Voltage ,0,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x107,Cell_Vol_Info_4,Cell_14_Voltage ,16,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x107,Cell_Vol_Info_4,Cell_15_Voltage ,32,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x107,Cell_Vol_Info_4,Cell_16_Voltage ,48,16,0,0.0001,0,0,6.5535,Unsigned,Intel,BMS,VCU,100,Cyclic,V,Tx,,NA
+0x108,Cell_Bal_Info,Cell_1_Balacing,0,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_2_Balacing,2,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_3_Balacing,4,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_4_Balacing,6,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_5_Balacing,8,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_6_Balacing,10,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_7_Balacing,12,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_8_Balacing,14,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_9_Balacing,16,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_10_Balacing,18,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_11_Balacing,20,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_12_Balacing,22,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_13_Balacing,24,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_14_Balacing,26,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_15_Balacing,28,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x108,Cell_Bal_Info,Cell_16_Balacing,30,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Balacing Off,
+0x1 Balancing On",NA
+0x109,Cell_BMS_Temp,Temp_Sen_1,0,8,0,1,-40,0,215,Unsigned,Intel,BMS,VCU,100,Cyclic,C,Tx,,Cell 1 temperature
+0x109,Cell_BMS_Temp,Temp_Sen_2,8,8,0,1,-40,0,215,Unsigned,Intel,BMS,VCU,100,Cyclic,C,Tx,,NA
+0x109,Cell_BMS_Temp,Temp_Sen_3,16,8,0,1,-40,0,215,Unsigned,Intel,BMS,VCU,100,Cyclic,C,Tx,,NA
+0x109,Cell_BMS_Temp,Temp_Sen_4,24,8,0,1,-40,0,215,Unsigned,Intel,BMS,VCU,100,Cyclic,C,Tx,,NA
+0x109,Cell_BMS_Temp,BMS_Temp,32,8,0,1,-40,0,215,Unsigned,Intel,BMS,VCU,100,Cyclic,C,Tx,,NA
+0x109,Cell_BMS_Temp,Temp_Cell_Min,40,8,0,1,-40,0,215,Unsigned,Intel,BMS,VCU,100,Cyclic,C,Tx,,NA
+0x109,Cell_BMS_Temp,Temp_Cell_Max,48,8,0,1,-40,0,215,Unsigned,Intel,BMS,VCU,100,Cyclic,C,Tx,,NA
+0x201,BMS_State ,BMS_Ignition_Status,0,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Off,
+0x1 On",NA
+0x201,BMS_State ,Batt_Pack_Oper_State,2,2,0,1,0,0,3,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Discharge Allowed,
+0x1 Charge Allowed,
+0x2 Charge/Discharge Not allowed ",NA
+0x201,BMS_State ,BMS_Operation_State,4,4,0,1,0,0,15,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x0 Off,
+0x1  Ready mode, 
+0x2 Precharge mode, 
+0x3 Charge, 
+0x4 Discharge,
+0x5 Sleep,
+0x6 Auth Fail,
+0x7 Shut Down,
+0x8 Error, 
+0x9 Invalid",NA
+0x201,BMS_State ,Contactor_Open_Close_State ,8,4,0,1,0,0,15,Unsigned,Intel,BMS,VCU,100,Cyclic,,Tx,"0x1 Default 
+0x1 Main Cont. Open
+0x2 Main Cont. Close 
+0x3 Precharger Contactor
+0x4 Invalid",NA
+0x202,VCU_CHARGER ,Max_Charging_Current_Limit,0,16,0,0.5,0,0,32767.5,Unsigned,Intel,VCU,EVCC,100,Cyclic,A,Tx,,NA
+0x202,VCU_CHARGER ,Max_Charging_Voltage_Limit,16,16,0,0.01,0,0,655.35,Unsigned,Intel,VCU,EVCC,100,Cyclic,V,Tx,,NA
+0x202,VCU_CHARGER ,CHARGE_ENABLE,32,2,0,1,0,0,3,Unsigned,Intel,VCU,EVCC,100,Cyclic,,Tx,"0x0 OFF/DEFAULT,
+0X1 On,
+0x2 Reserved,
+0x3 Invalid",Charge Enable 
+0x202,VCU_CHARGER ,CHARGE_MODE_REQUEST,34,2,0,1,0,0,3,Unsigned,Intel,VCU,EVCC,100,Cyclic,,Tx,"0x0 OFF/DEFAULT,
+0x1 Current Limit Mode, 
+0x2 Voltage Limit Mode, 
+0x3 Power Limit Mode ",NA
+0x202,VCU_CHARGER ,EMERGENCY_SHUTDOWN,36,1,0,1,0,0,1,Unsigned,Intel,VCU,EVCC,100,Cyclic,,Tx,"0x0 OFF/DEFAULT,
+0X1 ON",NA
+0x202,VCU_CHARGER ,CAN_ENABLE,37,1,0,1,0,1,1,Unsigned,Intel,VCU,EVCC,100,Cyclic,,Tx,"0x0 OFF/DEFAULT,
+0X1 ON",NA
+0x202,VCU_CHARGER ,HV_Contactor_Status,38,1,0,1,0,1,1,Unsigned,Intel,VCU,EVCC,100,Cyclic,,Tx,"0x0 Contactor, OFF/DEFAULT,
+0X1 Contactor ON",NA
+0x300,CHARGER_VCU,Charger_motor_feedback_dummy,0,2,0,1,0,0,3,Unsigned,Intel,EVCC,BMS,100,Cyclic,,Rx,,NA
+0x300,CHARGER_VCU,Charger_current_feedback_dummy,2,8,0,0.01,0,0,100,Unsigned,Intel,EVCC,BMS,100,Cyclic,,Rx,,NA
+0x300,CHARGER_VCU,Charger_voltage_feedback_dummy,10,16,0,0.001,5,0,70.535,Unsigned,Intel,EVCC,BMS,100,Cyclic,,Rx,,NA

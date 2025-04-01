@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: EVCC VCU BMS
+BU_: BMS EVCC VCU
 
 
 BO_ 257 Battery_Info_1: 8 BMS
@@ -128,33 +128,120 @@ BO_ 768 CHARGER_VCU: 8 EVCC
 
 
 
-CM_ BO_ 257 "Transmitters: BMS";
-CM_ BO_ 258 "Transmitters: BMS";
-CM_ BO_ 259 "Transmitters: BMS";
-CM_ BO_ 260 "Transmitters: BMS";
-CM_ BO_ 261 "Transmitters: BMS";
-CM_ BO_ 262 "Transmitters: BMS";
-CM_ BO_ 263 "Transmitters: BMS";
-CM_ BO_ 264 "Transmitters: BMS";
-CM_ BO_ 265 "Transmitters: BMS";
-CM_ BO_ 513 "Transmitters: BMS";
-CM_ BO_ 514 "Transmitters: VCU";
-CM_ BO_ 768 "Transmitters: EVCC";
-BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
-BA_DEF_DEF_  "GenMsgCycleTime" 0;
-BA_ "GenMsgCycleTime" BO_ 257 100;
-BA_ "GenMsgCycleTime" BO_ 258 10;
-BA_ "GenMsgCycleTime" BO_ 259 100;
-BA_ "GenMsgCycleTime" BO_ 260 100;
-BA_ "GenMsgCycleTime" BO_ 261 100;
-BA_ "GenMsgCycleTime" BO_ 262 100;
-BA_ "GenMsgCycleTime" BO_ 263 100;
-BA_ "GenMsgCycleTime" BO_ 264 100;
-BA_ "GenMsgCycleTime" BO_ 265 100;
-BA_ "GenMsgCycleTime" BO_ 513 100;
-BA_ "GenMsgCycleTime" BO_ 514 100;
-BA_ "GenMsgCycleTime" BO_ 768 100;
-
+CM_ BO_ 257 "Node: BMS";
+    
+CM_ SG_ 257 Battery_Voltage  "Battery voltage";
+    
+CM_ BO_ 258 "Node: BMS";
+    
+CM_ BO_ 259 "Node: BMS";
+    
+CM_ BO_ 260 "Node: BMS";
+    
+CM_ SG_ 260 Cell_1_Voltage  "Cell voltage 1";
+    
+CM_ BO_ 261 "Node: BMS";
+    
+CM_ BO_ 262 "Node: BMS";
+    
+CM_ BO_ 263 "Node: BMS";
+    
+CM_ BO_ 264 "Node: BMS";
+    
+CM_ BO_ 265 "Node: BMS";
+    
+CM_ SG_ 265 Temp_Sen_1 "Cell 1 temperature";
+    
+CM_ BO_ 513 "Node: BMS";
+    
+CM_ BO_ 514 "Node: VCU";
+    
+CM_ SG_ 514 CHARGE_ENABLE "Charge Enable ";
+    
+CM_ BO_ 768 "Node: EVCC";
+    
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
+    
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+    
+BA_ "GenMsgCycleTime" BO_ 257 100;
+    
+BA_ "GenMsgCycleTime" BO_ 258 10;
+    
+BA_ "GenMsgCycleTime" BO_ 259 100;
+    
+BA_ "GenMsgCycleTime" BO_ 260 100;
+    
+BA_ "GenMsgCycleTime" BO_ 261 100;
+    
+BA_ "GenMsgCycleTime" BO_ 262 100;
+    
+BA_ "GenMsgCycleTime" BO_ 263 100;
+    
+BA_ "GenMsgCycleTime" BO_ 264 100;
+    
+BA_ "GenMsgCycleTime" BO_ 265 100;
+    
+BA_ "GenMsgCycleTime" BO_ 513 100;
+    
+BA_ "GenMsgCycleTime" BO_ 514 100;
+    
+BA_ "GenMsgCycleTime" BO_ 768 100;
+    
+VAL_ 264 Cell_16_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_15_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_14_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_13_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_12_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_11_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_10_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_9_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_8_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_7_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_6_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_5_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_4_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_3_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_2_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 264 Cell_1_Balacing 0 "Balacing Off" 1 "Balancing On" ;
+    
+VAL_ 513 Contactor_Open_Close_State  1 "Default 
+0x1 Main Cont. Open
+0x2 Main Cont. Close 
+0x3 Precharger Contactor
+0x4 Invalid" ;
+    
+VAL_ 513 BMS_Operation_State 0 "Off" 1 "Ready mode" 2 "Precharge mode" 3 "Charge" 4 "Discharge" 5 "Sleep" 6 "Auth Fail" 7 "Shut Down" 8 "Error" 9 "Invalid" ;
+    
+VAL_ 513 Batt_Pack_Oper_State 0 "Discharge Allowed" 1 "Charge Allowed" 2 "Charge/Discharge Not allowed" ;
+    
+VAL_ 513 BMS_Ignition_Status 0 "Off" 1 "On" ;
+    
+VAL_ 514 HV_Contactor_Status 0 "Contactor" 1 "Contactor ON" ;
+    
+VAL_ 514 CAN_ENABLE 0 "OFF/DEFAULT" 1 "ON" ;
+    
+VAL_ 514 EMERGENCY_SHUTDOWN 0 "OFF/DEFAULT" 1 "ON" ;
+    
+VAL_ 514 CHARGE_MODE_REQUEST 0 "OFF/DEFAULT" 1 "Current Limit Mode" 2 "Voltage Limit Mode" 3 "Power Limit Mode" ;
+    
+VAL_ 514 CHARGE_ENABLE 0 "OFF/DEFAULT" 1 "On" 2 "Reserved" 3 "Invalid" ;
+    
 
 
 
